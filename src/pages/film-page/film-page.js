@@ -6,6 +6,7 @@ import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import {fetchFilm} from "../../store/actions";
 import Spinner from "../../components/spinner/spinner";
+import classNames from "classnames";
 
 function FilmPage(props) {
   const {filmId} = useParams();
@@ -13,21 +14,55 @@ function FilmPage(props) {
   const currentFilm = useSelector(state => state.film.film);
   const isLoading = useSelector(state => state.film.isLoading);
 
-  console.log(currentFilm)
-
   useEffect(() => {
     if (filmId) {
+      console.log(filmId)
       dispatch(fetchFilm(filmId));
     }
   }, [filmId, dispatch]);
+  console.log(filmId, currentFilm)
+
+
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <Spinner />
+    );
   }
 
+  const {poster, name, description, rating, year, genres, countries} = currentFilm;
+
   return (
-    <div className="page">
+    <div className={classNames('page', 'container')}>
       <Header />
+
+      <div className={styles.wrapper}>
+        <img className={styles.poster} src={poster.url}/>
+        <div className={styles.info__wrapper}>
+          <h1 className={styles.title}>{name}</h1>
+          <p className={styles.details}>
+            <span>imdb: {rating.imdb}</span>
+            <span>Год: {year}</span>
+            <span className={styles.listDetail}>
+              Жанры:
+              {genres.map(item => (
+                <span >{item.name}</span>
+              ))}
+            </span>
+            <span className={styles.listDetail}>
+              Страна:
+              {countries.map(item => (
+                <span >{item.name}</span>
+              ))}
+            </span>
+
+
+          </p>
+          <p className={styles.description}>{description}</p>
+        </div>
+
+
+      </div>
       <Footer />
 
     </div>

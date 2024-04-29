@@ -11,15 +11,13 @@ import {setParams} from "../../store/actions";
 
 function MainPage(props) {
   const dispatch = useDispatch();
-  const select = useSelector(state => ({
-    movies: state.movies.movies,
-    isLoadingData: state.movies.isLoading,
-    totalCount: state.movies.totalCount,
-    page: state.movies.page,
-    limit: state.movies.limit
-  }))
+  const movies = useSelector(state => state.movies.movies);
+  const isLoadingData = useSelector(state => state.movies.isLoading);
+  const totalCount = useSelector(state => state.movies.totalCount);
+  const page = useSelector(state => state.movies.page);
+  const limit = useSelector(state => state.movies.limit);
 
-  console.log(select.movies)
+  console.log(movies)
 
   const handlePaginate = (page) => {
     dispatch(setParams({page}));
@@ -28,25 +26,25 @@ function MainPage(props) {
   const makePaginatorLink = (page) => {
     return `?${new URLSearchParams({
       page,
-      limit: select.limit,
+      limit: limit,
     })}`;
   };
 
-  if (select.isLoadingData) {
+  if (isLoadingData) {
     return (
       <Spinner />
     )
   }
 
   return (
-    <div className={classNames(styles.page, 'container')}>
+    <div className={classNames('page', 'container')}>
       <Header/>
 
-      {select.movies && select.movies.length &&
+      {movies && movies.length &&
         <main className={styles.page__index}>
           <div className={styles.content__container}>
-            <Category items={select.movies}/>
-            <Pagination count={select.totalCount} page={select.page} limit={select.limit} onChange={handlePaginate}
+            <Category items={movies}/>
+            <Pagination count={totalCount} page={page} limit={limit} onChange={handlePaginate}
             makeLink={makePaginatorLink}/>
           </div>
 

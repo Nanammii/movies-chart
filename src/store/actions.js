@@ -31,6 +31,7 @@ export const fetchFilm = (id) => {
         method: 'GET',
         headers: {'X-API-KEY': 'Z6AXAX7-DSM400W-JZBYEGH-429BPFJ'}
       });
+      debugger
       const data = await response.json();
       console.log(data)
 
