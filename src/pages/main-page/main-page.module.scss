@@ -1,5 +1,28 @@
 .page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  background-color: #020510;
+  color: #e5e5e5;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.page__index {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 100vh;
+}
+
+.content__container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 30px 30px 80px 30px;
+  border-radius: 15px;
+  background: #0a031c;
+
+  @media (max-width: 376px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }

@@ -1,5 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainPage from "../../pages/main-page/main-page";
+import FilmPage from "../../pages/film-page/film-page";
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<MainPage />} />
-          {/*<Route path={`/film/:filmId`} element={<FilmPage />}*/}
+          <Route path={`/movie/:filmId`} element={<FilmPage />}
           />
         </Routes>
       </BrowserRouter>

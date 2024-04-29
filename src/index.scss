@@ -16,15 +16,15 @@
 
 body {
   width: 100%;
-  min-width: 1600px;
+  min-width: 375px;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', "Arial", sans-serif;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
-  background-color: #020510;
-  color: #ffffff;
+  background-color: #e5e5e5;
+  color: #444444;
   box-sizing: border-box;
 
   @media (max-width: 1130px) {
@@ -76,4 +76,11 @@ img {
     width: 375px;
     padding: 0 10px;
   }
+}
+
+.logo {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  width: max-content;
 }

@@ -1,10 +1,15 @@
 .wrapper {
-  padding-top: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   display: flex;
 
   @media (max-width: 376px) {
     padding-top: 5px;
   }
+}
+
+.title {
+  padding: 40px 30px;
 }
 
 .link {

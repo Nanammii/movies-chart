@@ -1,0 +1,84 @@
+.filmCard {
+  display: grid;
+  grid-template-columns: 185px auto;
+  min-width: 300px;
+  position: relative;
+  border-radius: 5px;
+  background-color: #fafcfc;
+  color: #5c728a;
+
+  @media (max-width: 376px) {
+    grid-template-columns: 150px auto;
+    height: 230px;
+    min-width: 0;
+  }
+}
+
+.imageWrapper {
+  display: flex;
+  border-radius: inherit;
+}
+
+.filmCard__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px 0 0 5px;
+}
+
+.filmCard__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info__wrapper {
+  overflow-y: scroll;
+  padding: 15px;
+}
+
+.filmCard__name {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+
+  @media (max-width: 376px) {
+    font-size: 14px;
+  }
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filmCard__description {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+}
+
+.filmCard__genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 12px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.filmCard__genre {
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+  background-color: #3d3369;
+  color: #dcdcdc;
+}

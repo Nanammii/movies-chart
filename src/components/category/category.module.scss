@@ -13,11 +13,10 @@
 .films__list {
   display: grid;
   grid-template-columns: repeat(3, minmax(390px, 460px));
-  grid-template-rows: repeat(auto-fill, 265px);
   gap: 40px;
   width: 100%;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1400px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
