@@ -20,7 +20,7 @@ function FilmPage(props) {
       dispatch(fetchFilm(filmId));
     }
   }, [filmId, dispatch]);
-  console.log(filmId, currentFilm)
+  console.log(filmId, isLoading, currentFilm)
 
 
 
@@ -30,28 +30,28 @@ function FilmPage(props) {
     );
   }
 
-  const {poster, name, description, rating, year, genres, countries} = currentFilm;
+  const {poster, name, description, rating, year, genres, countries, alternativeName} = currentFilm;
 
   return (
     <div className={classNames('page', 'container')}>
       <Header />
 
       <div className={styles.wrapper}>
-        <img className={styles.poster} src={poster.url}/>
+        <img className={styles.poster} src={poster?.url} alt={alternativeName}/>
         <div className={styles.info__wrapper}>
           <h1 className={styles.title}>{name}</h1>
           <p className={styles.details}>
-            <span>imdb: {rating.imdb}</span>
+            <span>imdb: {rating?.imdb}</span>
             <span>Год: {year}</span>
             <span className={styles.listDetail}>
               Жанры:
-              {genres.map(item => (
+              {genres && genres.map(item => (
                 <span >{item.name}</span>
               ))}
             </span>
             <span className={styles.listDetail}>
               Страна:
-              {countries.map(item => (
+              {countries && countries.map(item => (
                 <span >{item.name}</span>
               ))}
             </span>
