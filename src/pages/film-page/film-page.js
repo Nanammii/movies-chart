@@ -23,10 +23,9 @@ function FilmPage(props) {
   console.log(filmId, isLoading, currentFilm)
 
 
-
   if (isLoading) {
     return (
-      <Spinner />
+      <Spinner/>
     );
   }
 
@@ -34,36 +33,38 @@ function FilmPage(props) {
 
   return (
     <div className={classNames('page', 'container')}>
-      <Header />
+      <Header/>
 
-      <div className={styles.wrapper}>
-        <img className={styles.poster} src={poster?.url} alt={alternativeName}/>
-        <div className={styles.info__wrapper}>
-          <h1 className={styles.title}>{name}</h1>
-          <p className={styles.details}>
-            <span>imdb: {rating?.imdb}</span>
-            <span>Год: {year}</span>
-            <span className={styles.listDetail}>
+      <div className={styles.page__film}>
+        <div className={styles.wrapper}>
+          <img className={styles.poster} src={poster?.url} alt={alternativeName}/>
+          <div className={styles.info__wrapper}>
+            <h1 className={styles.title}>{name}</h1>
+            <p className={styles.details}>
+              <span>imdb: {rating?.imdb}</span>
+              <span>Год: {year}</span>
+              <span className={styles.listDetail}>
               Жанры:
-              {genres && genres.map(item => (
-                <span >{item.name}</span>
-              ))}
+                {genres && genres.map(item => (
+                  <span>{item.name}</span>
+                ))}
             </span>
-            <span className={styles.listDetail}>
+              <span className={styles.listDetail}>
               Страна:
-              {countries && countries.map(item => (
-                <span >{item.name}</span>
-              ))}
+                {countries && countries.map(item => (
+                  <span>{item.name}</span>
+                ))}
             </span>
 
 
-          </p>
-          <p className={styles.description}>{description}</p>
+            </p>
+            <p className={styles.description}>{description}</p>
+          </div>
+
+
         </div>
-
-
       </div>
-      <Footer />
+      <Footer/>
 
     </div>
   );
