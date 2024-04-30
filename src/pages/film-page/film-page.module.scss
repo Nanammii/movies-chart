@@ -1,19 +1,17 @@
-.page__film {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 100vh;
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 20px;
+  border-radius: 15px;
+  background: #0a031c;
+  min-height: 100vh;
 
   @media (min-width: 768px) {
     flex-direction: row;
     gap: 30px;
+    display: grid;
+    grid-template-columns: 300px 3fr;
   }
 }
 
@@ -29,7 +27,6 @@
 
 .info__wrapper {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -47,4 +44,26 @@
 .description {
   margin: 0;
   padding-block: 10px;
+}
+
+.similar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.similar__list {
+  display: flex;
+  gap: 15px;
+}
+
+.similar__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+
+.similar__image {
+  min-width: 110px;
 }

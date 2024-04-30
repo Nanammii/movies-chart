@@ -5,7 +5,7 @@ export default function Category({items}) {
 
   return (
     <div className={styles.category}>
-      <h2 className={styles.category__title}>TV</h2>
+      <h2 className={styles.category__title}>Фильмы</h2>
 
         <div className={styles.films__list}>
           {items.map((item) => (
