@@ -3,12 +3,12 @@ import {Link} from "react-router-dom";
 
 export default function FilmCard({item}) {
   const {id, poster, name, year, rating, shortDescription, genres} = item;
-  const {previewUrl} = poster;
+  // const {previewUrl} = poster;
 
   return (
     <article className={styles.filmCard}>
       <Link className={styles.imageWrapper} to={`/movie/${id}`}>
-        <img className={styles.filmCard__image} src={previewUrl} alt={"photo"}/>
+        <img className={styles.filmCard__image} src={poster?.previewUrl} alt={"photo"}/>
       </Link>
       <div className={styles.filmCard__info}>
         <div className={styles.info__wrapper}>
